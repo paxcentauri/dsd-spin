@@ -1,8 +1,3 @@
-// DataIn - input data port
-// Resetn - synchronous reset
-// Go signal starts things
-// DataResult - register at output of ALU
-
 module part2(Clock, Resetn, Go, DataIn, DataResult);
     input Clock;
     input Resetn;
@@ -10,7 +5,6 @@ module part2(Clock, Resetn, Go, DataIn, DataResult);
     input [7:0] DataIn;
     output [7:0] DataResult;
 
-    // lots of wires to connect our datapath and control
     wire ld_a, ld_b, ld_c, ld_x, ld_r;
     wire ld_alu_out;
     wire [1:0]  alu_select_a, alu_select_b;
