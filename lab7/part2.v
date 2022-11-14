@@ -1,9 +1,3 @@
-
-
-
-//
-// This is the template for Part 2 of Lab 7.
-
 module part2(iResetn,iPlotBox,iBlack,iColour,iLoadX,iXY_Coord,iClock,oX,oY,oColour,oPlot);
    parameter X_SCREEN_PIXELS = 8'd160;
    parameter Y_SCREEN_PIXELS = 7'd120;
