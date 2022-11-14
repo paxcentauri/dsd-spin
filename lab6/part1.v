@@ -1,8 +1,4 @@
-// Resetn synchronous reset when 0
-// w input to detector
-// z is output from detector
-// Clock clock signal
-// CurState outputs current state
+
 
 module part1(Clock, Resetn, w, z, CurState);
    input Clock;
@@ -15,10 +11,7 @@ module part1(Clock, Resetn, w, z, CurState);
     
     localparam A = 4'b0000, B = 4'b0001, C = 4'b0010, D = 4'b0011, E = 4'b0100, F = 4'b0101, G = 4'b0110;
     
-    //State table
-    //The state table should only contain the logic for state transitions
-    //Do not mix in any output logic. The output logic should be handled separately.
-    //This will make it easier to read, modify and debug the code.
+    
     always@(*)
     begin: state_table
         case (y_Q)
@@ -58,13 +51,11 @@ module part1(Clock, Resetn, w, z, CurState);
     always @(posedge Clock)
     begin: state_FFs
         if(Resetn == 1'b0)
-            y_Q <=  A; // Should set reset state to state A
+            y_Q <=  A; 
         else
             y_Q <= Y_D;
     end // state_FFS
 
-    // Output logic
-    // Set z to 1 when in relevant states
     assign z = ((y_Q == F) | (y_Q == G));
     assign CurState = y_Q;
 endmodule
